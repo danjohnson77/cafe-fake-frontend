@@ -1,0 +1,196 @@
+$bg-color: rgba($dark-color, 0.5);
+$bg-color: rgba($dark-color, 0.9);
+
+// Keep these 3 values the same to align select box and
+$toggle-margin-left: 1rem;
+$nav-margin-left: 1rem;
+$nav-margin-bottom: 1rem;
+
+$toggle-line-offset: 7px;
+
+$nav-open-timing: 400ms;
+
+$nav-link-fadeout: 150ms;
+$nav-link-fadein: 250ms;
+
+$nav-link-color: $light-color;
+$nav-link-hover: $primary-color;
+$nav-link-size: 2rem;
+$nav-link-font: $submenu-font;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-wrap {
+  width: 100%;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+header.res-navbar {
+  background-color: $bg-color;
+  padding: 0 2rem;
+  text-align: center;
+  width: 100%;
+
+  .logo {
+    color: $light-color;
+    font-family: $header-font;
+
+    &-alt-color {
+      color: red;
+    }
+  }
+}
+
+.nav-toggle {
+  display: none;
+
+  &:checked ~ nav {
+    transform: scale(1, 1);
+  }
+  &:checked ~ nav a {
+    opacity: 1;
+    transition: opacity $nav-link-fadein ease-in-out $nav-link-fadein;
+  }
+
+  &-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: $toggle-margin-left;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    span,
+    span::before,
+    span::after {
+      display: block;
+      background: white;
+      height: 2px;
+      width: 2rem;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    span::before,
+    span::after {
+      content: "";
+      position: absolute;
+    }
+
+    span::before {
+      bottom: $toggle-line-offset;
+    }
+    span::after {
+      top: $toggle-line-offset;
+    }
+  }
+}
+
+nav {
+  position: absolute;
+
+  top: 100%;
+  left: 0;
+  background: $bg-color;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  transform: scale(1, 0);
+  transform-origin: center;
+  transition: transform $nav-open-timing ease-in-out;
+
+  @include flex-column;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: $nav-margin-bottom;
+    margin-left: $nav-margin-left;
+    a.active {
+      color: $nav-link-hover;
+    }
+  }
+
+  a {
+    color: $nav-link-color;
+    text-decoration: none;
+    font-size: $nav-link-size;
+    font-family: $paragraph-font;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity $nav-link-fadeout ease-in-out;
+
+    &:hover {
+      color: $nav-link-hover;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    //max-width: 1280px;
+    align-items: center;
+  }
+
+  .logo {
+    grid-column: 1 / 2;
+    display: flex;
+    justify-content: flex-start;
+  }
+  nav {
+    /* all: unset is not supported in IE / Edge, may need to update */
+    all: unset;
+    grid-column: 2/ 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+    }
+    li {
+      margin-left: 3rem;
+      margin-bottom: 0;
+    }
+    a {
+      opacity: 1;
+      position: relative;
+      font-size: 1.2rem;
+    }
+    a::before {
+      content: "";
+      display: block;
+      height: 2px;
+      background: red;
+      position: absolute;
+      top: -0.5rem;
+      left: 0;
+      right: 0;
+      transform: scale(0, 1);
+      transition: transform 200ms ease-in-out;
+    }
+    a:hover::before {
+      transform: scale(1, 1);
+    }
+  }
+}

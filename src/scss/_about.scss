@@ -1,0 +1,8 @@
+.about {
+  @include flex-center-all;
+  min-height: 80vh;
+  justify-content: space-evenly;
+  &-header {
+    text-align: center;
+  }
+}

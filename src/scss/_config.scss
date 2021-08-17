@@ -1,0 +1,62 @@
+// @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Peddana&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Francois+One&display=swap");
+
+$header-font: "Francois One", sans-serif;
+$paragraph-font: "Lato", sans-serif;
+$submenu-font: "Peddana", sans-serif;
+
+$overall-max-width: 1600px;
+$breakpoint: 820px;
+
+$light-color: white;
+$dark-color: black;
+$primary-color: red;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+
+body {
+  background-color: $dark-color;
+  color: $light-color;
+  text-transform: uppercase;
+  font-family: $paragraph-font;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: $light-color;
+}
+
+p {
+  text-transform: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+
+button {
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

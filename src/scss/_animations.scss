@@ -1,0 +1,88 @@
+.page-appear,
+.page-enter {
+  opacity: 0;
+}
+
+.page-appear-active,
+.page-enter-active {
+  opacity: 1;
+
+  transition: opacity 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+
+  transition: opacity 200ms;
+}
+
+// Border
+.border {
+  transform: scale(0);
+}
+.border.is-visible {
+  transform: scale(1);
+
+  transition: all 800ms ease-in-out;
+}
+
+// About
+
+.fade-x-left {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.fade-x-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 800ms ease-in-out;
+}
+
+.fade-x-right {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.fade-x-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 800ms ease-in-out;
+}
+
+.fade-in {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.fade-y-down {
+  opacity: 0;
+  transform: translateY(-10vh);
+}
+
+.fade-y-down.is-visible {
+  opacity: 1;
+  transition: opacity 1.2s ease-out, transform 1s ease-out;
+  transform: none;
+}
+.fade-y-up {
+  opacity: 0;
+  transform: translateY(10vh);
+}
+
+.fade-y-up.is-visible {
+  opacity: 1;
+  transition: opacity 1.2s ease-out, transform 1s ease-out;
+  transform: none;
+}
