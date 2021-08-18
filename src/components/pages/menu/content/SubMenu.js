@@ -57,9 +57,9 @@ const SubMenu = ({ menu }) => {
       </div>
 
       {menuContext.submenu.name && <SubMenuItems />}
-      <div className="sub-menu-return-link">
-        <Link to="/menu">Go Back</Link>
-      </div>
+      <Link to={"/menu"}>
+        <Button>GO BACK</Button>
+      </Link>
     </div>
   );
 };
