@@ -9,6 +9,7 @@ import SubMenuItems from "./SubMenuItems";
 import FixedImgBg from "../../../layout/FixedImgBg";
 import Spinner from "../../../layout/Spinner";
 import { Link } from "react-router-dom";
+import Button from "../../../ui/Button";
 
 const SubMenu = ({ menu }) => {
   const menuContext = useContext(MenuContext);
@@ -57,9 +58,11 @@ const SubMenu = ({ menu }) => {
       </div>
 
       {menuContext.submenu.name && <SubMenuItems />}
-      <Link to={"/menu"}>
-        <Button>GO BACK</Button>
-      </Link>
+      <div className="sub-menu-back">
+        <Link to={"/menu"}>
+          <Button>GO BACK</Button>
+        </Link>
+      </div>
     </div>
   );
 };

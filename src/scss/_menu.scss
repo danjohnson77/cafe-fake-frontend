@@ -74,6 +74,10 @@ $menu-hover-in: 200ms;
     text-align: center;
   }
 
+  &-back {
+    @include flex-center-all;
+  }
+
   &-categories {
     @include flex-column;
     justify-content: space-between;
