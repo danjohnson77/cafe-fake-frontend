@@ -19,8 +19,8 @@ const About = () => {
 
   const imageUrl = `${url}`;
 
-  const left = <p className="page-text">{description}</p>;
-  const right = <img src={imageUrl} alt="" />;
+  const right = <p className="page-text">{description}</p>;
+  const left = <img src={imageUrl} alt="" />;
 
   return (
     <Fragment>

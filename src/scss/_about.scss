@@ -6,3 +6,14 @@
     text-align: center;
   }
 }
+
+@media screen and (max-width: $breakpoint) {
+  .about-pane {
+    .split-pane-content {
+      padding: 2rem;
+    }
+    .border {
+      width: 90%;
+    }
+  }
+}
