@@ -66,12 +66,16 @@ $menu-hover-in: 200ms;
   color: $light-color;
   @include flex-column;
   padding: 1rem;
-
-  justify-content: space-evenly;
+  min-height: 80vh;
+  justify-content: space-around;
 
   &-header {
     @include flex-column;
+
     text-align: center;
+    h1 {
+      margin-bottom: 1rem;
+    }
   }
 
   &-back {
@@ -100,7 +104,7 @@ $menu-hover-in: 200ms;
 
   &-items {
     display: grid;
-
+    flex-grow: 1;
     // align-items: center;
     grid-template-columns: repeat(2, 1fr);
     margin: 2rem 0;
